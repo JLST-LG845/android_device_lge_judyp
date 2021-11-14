@@ -15,7 +15,7 @@
 #
 
 # Release name
-PRODUCT_RELEASE_NAME := judyln
+PRODUCT_RELEASE_NAME := judyp
 
 $(call inherit-product, build/target/product/embedded.mk)
 
@@ -23,16 +23,16 @@ $(call inherit-product, build/target/product/embedded.mk)
 $(call inherit-product, vendor/omni/config/common.mk)
 
 # Inherit from hardware-specific part of the product configuration
-$(call inherit-product, device/lge/judyln/device.mk)
+$(call inherit-product, device/lge/judyp/device.mk)
 
 ## Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := judyln
-PRODUCT_NAME := omni_judyln
+PRODUCT_DEVICE := judyp
+PRODUCT_NAME := omni_judyp
 PRODUCT_BRAND := lge
-PRODUCT_MODEL := LG G7 ThinQ
+PRODUCT_MODEL := LG V35 ThinQ
 PRODUCT_MANUFACTURER := LGE
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME=judyln_lao_eea \
-    BUILD_PRODUCT=judyln \
-    TARGET_DEVICE=judyln
+    PRODUCT_NAME=judyp_lao_eea \
+    BUILD_PRODUCT=judyp \
+    TARGET_DEVICE=judyp

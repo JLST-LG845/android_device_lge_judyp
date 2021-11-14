@@ -1,12 +1,10 @@
-export FOX_VERSION="R11.0_2.3"
-export FOX_BUILD_TYPE="Stable"
 export ALLOW_MISSING_DEPENDENCIES=true
 export LC_ALL="C"
 
 export OF_AB_DEVICE=1
 export FOX_USE_NANO_EDITOR=1
 export OF_FLASHLIGHT_ENABLE=0
-export OF_MAINTAINER=TheNotOnly
+export OF_MAINTAINER=EmanuelCN
 export OF_SCREEN_H=2340
 export OF_STATUS_H=94
 export OF_STATUS_INDENT_LEFT=48
@@ -20,4 +18,4 @@ export FOX_RESET_SETTINGS=0
 export FOX_R11=1
 export OF_NO_SAMSUNG_SPECIAL=1
 
-add_lunch_combo omni_judyln-eng
+add_lunch_combo omni_judyp-eng
