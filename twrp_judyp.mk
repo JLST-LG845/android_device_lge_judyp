@@ -20,14 +20,14 @@ PRODUCT_RELEASE_NAME := judyp
 $(call inherit-product, build/target/product/embedded.mk)
 
 # Inherit from our custom product configuration
-$(call inherit-product, vendor/omni/config/common.mk)
+$(call inherit-product, vendor/twrp/config/common.mk)
 
 # Inherit from hardware-specific part of the product configuration
 $(call inherit-product, device/lge/judyp/device.mk)
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := judyp
-PRODUCT_NAME := omni_judyp
+PRODUCT_NAME := twrp_judyp
 PRODUCT_BRAND := lge
 PRODUCT_MODEL := LG V35 ThinQ
 PRODUCT_MANUFACTURER := LGE

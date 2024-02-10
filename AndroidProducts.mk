@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_judyp.mk
+    $(LOCAL_DIR)/twrp_judyp.mk
