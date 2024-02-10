@@ -17,11 +17,6 @@
 # Release name
 PRODUCT_RELEASE_NAME := judyp
 
-$(call inherit-product, build/target/product/embedded.mk)
-
-# Inherit from our custom product configuration
-$(call inherit-product, vendor/twrp/config/common.mk)
-
 # Inherit from hardware-specific part of the product configuration
 $(call inherit-product, device/lge/judyp/device.mk)
 
