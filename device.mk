@@ -16,10 +16,10 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-# Get non-open-source specific aspects
-$(call inherit-product-if-exists, vendor/lge/judyp/judyp-vendor.mk)
-
 DEVICE_PATH := device/lge/judyp
+
+# Inherit from common tree
+$(call inherit-product, device/lge/sdm845-common/sdm845.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
@@ -28,9 +28,6 @@ DEVICE_PACKAGE_OVERLAYS += \
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/vendor.prop
-
-# Setup dalvik vm configs
-$(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -47,10 +44,6 @@ PRODUCT_COPY_FILES += \
 
 $(foreach f,$(wildcard $(DEVICE_PATH)/rootdir/etc/init/hw/*.rc),\
         $(eval PRODUCT_COPY_FILES += $(f):$(TARGET_COPY_OUT_VENDOR)/etc/init/hw/$(notdir $f)))
-
-# Lights
-PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.lge
 
 # NFC
 PRODUCT_COPY_FILES += \
@@ -72,12 +65,5 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/com.nxp.mifare.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.nxp.mifare.xml
 
-# NQ Client
-PRODUCT_PACKAGES += \
-    jcos_nq_client \
-    ls_nq_client \
-    se_nq_extn_client \
-    libchrome.vendor
-
-# common judy (sdm845)
-$(call inherit-product, device/lge/sdm845-common/sdm845.mk)
+# Get non-open-source specific aspects
+$(call inherit-product-if-exists, vendor/lge/judyp/judyp-vendor.mk)
