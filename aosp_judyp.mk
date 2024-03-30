@@ -26,7 +26,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 # Inherit from judyp device
 $(call inherit-product, device/lge/judyp/device.mk)
 
-# Inherit some common DotOS stuff.
+# Inherit some common aosp stuff.
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Overlays (inherit after vendor/cm to ensure we override it)
@@ -50,7 +50,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE=judyp \
     PRODUCT_NAME=judyp_lao_com \
 
-# DotOs
+# Boot animation
 TARGET_BOOT_ANIMATION_RES := 1440
 
 # Charging Animation
