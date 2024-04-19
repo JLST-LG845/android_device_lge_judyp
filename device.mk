@@ -19,8 +19,7 @@ PRODUCT_PACKAGES += \
     otapreopt_script \
     cppreopts.sh \
     update_engine \
-    update_verifier \
-#    update_engine_sideload
+    update_verifier
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -44,3 +43,6 @@ VENDOR_SECURITY_PATCH := 2025-12-31
 # Shims
 PRODUCT_PACKAGES += \
     libshim_icu
+
+PRODUCT_COPY_FILES += \
+    $(OUT_DIR)/target/product/judyp/obj/SHARED_LIBRARIES/libshim_icu_intermediates/libshim_icu.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libshim_icu.so
