@@ -40,6 +40,10 @@ PRODUCT_PACKAGES += \
 # HACK: Set vendor patch level
 VENDOR_SECURITY_PATCH := 2025-12-31
 
+# Libsecure
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/root/system/lib64/libsecureui.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libsecureui.so
+
 # Shims
 PRODUCT_PACKAGES += \
     libshim_icu
