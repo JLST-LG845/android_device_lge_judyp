@@ -45,8 +45,5 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/system/lib64/libsecureui.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libsecureui.so
 
 # Shims
-PRODUCT_PACKAGES += \
-    libshim_icu
-
 PRODUCT_COPY_FILES += \
-    $(OUT_DIR)/target/product/judyp/obj/SHARED_LIBRARIES/libshim_icu_intermediates/libshim_icu.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libshim_icu.so
+    $(LOCAL_PATH)/recovery/root/system/lib64/libshim_icu.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libshim_icu.so
