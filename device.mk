@@ -24,7 +24,8 @@ $(call inherit-product, device/lge/sdm845-common/sdm845.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(DEVICE_PATH)/overlay
+    $(DEVICE_PATH)/overlay \
+    $(DEVICE_PATH)/overlay-lineage
 
 # Properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
