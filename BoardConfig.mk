@@ -37,5 +37,8 @@ BOARD_VENDORIMAGE_PARTITION_SIZE := 1048576000
 # Platform
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
+# SELinux
+BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
+
 # inherit from the proprietary version
 -include vendor/lge/judyp/BoardConfigVendor.mk

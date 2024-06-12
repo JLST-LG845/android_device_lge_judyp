@@ -1,0 +1,2 @@
+type sysfs_input, fs_type, sysfs_type;
+type sysfs_lge_fingerprint, sysfs_type, fs_type;
