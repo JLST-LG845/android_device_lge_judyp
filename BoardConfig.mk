@@ -44,31 +44,23 @@ BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 BOARD_RAMDISK_OFFSET     := 0x01000000
-BOARD_KERNEL_CMDLINE :=  \
-    console=ttyMSM0,115200n8 \
-    earlycon=msm_geni_serial,0xA84000 \
-    androidboot.hardware=qcom \
-    androidboot.console=ttyMSM0 \
-    video=vfb:640x400,bpp=32,memsize=3072000 \
-    msm_rtb.filter=0x237 \
-    ehci-hcd.park=3 \
-    lpm_levels.sleep_disabled=1 \
-    service_locator.enable=1 \
-    swiotlb=2048 \
-    androidboot.configfs=true \
-    loop.max_part=7 \
-    androidboot.usbcontroller=a600000.dwc3 \
-    androidboot.fastboot=1 \
-    buildv=WW_user_100.10.107.110 \
-    androidboot.avb_version=0.0 \
-    androidboot.vbmeta.avb_version=0.0 \
-    androidboot.selinux=permissive
+BOARD_BOOTIMG_HEADER_VERSION := 1
+BOARD_KERNEL_CMDLINE += video=vfb:640x400,bpp=32,memsize=3072000
+BOARD_KERNEL_CMDLINE += msm_rtb.filter=0x237 ehci-hcd.park=3
+BOARD_KERNEL_CMDLINE += lpm_levels.sleep_disabled=1 service_locator.enable=1
+BOARD_KERNEL_CMDLINE += swiotlb=2048 androidboot.configfs=true
+BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=a600000.dwc3
+BOARD_KERNEL_CMDLINE += loop.max_part=7
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.hardware=judyln
+BOARD_KERNEL_CMDLINE += androidboot.fastboot=1
+BOARD_KERNEL_CMDLINE += disable_skip_initramfs
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_ARCH := arm64
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/$(BOARD_KERNEL_IMAGE_NAME)
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-  TARGET_KERNEL_CONFIG := Z01R_defconfig
-  TARGET_KERNEL_SOURCE := kernel/asus/$(PRODUCT_PLATFORM)
+  TARGET_KERNEL_CONFIG := lineageos_judyln_defconfig
+  TARGET_KERNEL_SOURCE := kernel/lge/$(PRODUCT_PLATFORM)
 endif
 
 # Platform
@@ -165,6 +157,7 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@1.0.so \
     $(TARGET_OUT_SYSTEM_EXT_SHARED_LIBRARIES)/vendor.display.config@2.0.so
 TW_USE_FSCRYPT_POLICY := 1
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
 
 # TWRP Debug Flags
 #TWRP_EVENT_LOGGING := true
