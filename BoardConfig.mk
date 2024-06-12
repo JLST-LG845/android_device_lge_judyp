@@ -52,14 +52,14 @@ BOARD_KERNEL_CMDLINE += swiotlb=2048 androidboot.configfs=true
 BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=a600000.dwc3
 BOARD_KERNEL_CMDLINE += loop.max_part=7
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
-BOARD_KERNEL_CMDLINE += androidboot.hardware=judyln
+BOARD_KERNEL_CMDLINE += androidboot.hardware=judyp
 BOARD_KERNEL_CMDLINE += androidboot.fastboot=1
 BOARD_KERNEL_CMDLINE += disable_skip_initramfs
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_ARCH := arm64
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/$(BOARD_KERNEL_IMAGE_NAME)
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-  TARGET_KERNEL_CONFIG := lineageos_judyln_defconfig
+  TARGET_KERNEL_CONFIG := lineageos_judyp_defconfig
   TARGET_KERNEL_SOURCE := kernel/lge/$(PRODUCT_PLATFORM)
 endif
 

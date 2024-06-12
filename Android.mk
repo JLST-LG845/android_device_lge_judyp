@@ -7,7 +7,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),judyln)
+ifeq ($(TARGET_DEVICE),judyp)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 include $(CLEAR_VARS)
 endif

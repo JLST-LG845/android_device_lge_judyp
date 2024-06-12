@@ -1,4 +1,4 @@
-ro.display.series=LG G7
+ro.display.series=LG V35
 ro.sf.lcd_density=640
 ro.lge.lcd_default_brightness=178
 sys.usb.controller=a600000.dwc3
