@@ -37,13 +37,18 @@ PRODUCT_PACKAGES += \
     android.hardware.boot@1.0-service \
     android.hardware.boot@1.0-impl.recovery
 
+# Graphics
+PRODUCT_PACKAGES += \
+    libdisplayconfig.qti
+
 # HACK: Set vendor patch level
 VENDOR_SECURITY_PATCH := 2025-12-31
 
 # Libsecure
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/recovery/root/system/lib64/libsecureui.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libsecureui.so
+#PRODUCT_COPY_FILES += \
+#    $(LOCAL_PATH)/recovery/root/vendor/lib64/libsecureui.so:$(TARGET_COPY_OUT_RECOVERY)/root/vendor/lib64/libsecureui.so
 
 # Shims
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/system/lib64/libshim_icu.so:$(TARGET_COPY_OUT_RECOVERY)/root/system/lib64/libshim_icu.so
+    
