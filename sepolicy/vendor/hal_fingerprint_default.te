@@ -23,3 +23,5 @@ allow hal_fingerprint_default fingerprintd_data_file:file create_file_perms;
 
 # Ignore all logging requests
 dontaudit hal_fingerprint storage_file:dir search;
+
+allow hal_fingerprint_default self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
